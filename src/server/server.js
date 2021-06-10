@@ -93,5 +93,5 @@ app.post('/login', function (req, resp) {
     resp.send({ succ: false });
 });
 app.listen(8080, function () {
-    console.log('服务器在8080端口启动');
+    console.log('服务器已经在8080端口启动');
 });
