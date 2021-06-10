@@ -1,0 +1,9 @@
+.login-content{
+    height: 100vh;
+}
+form{
+    width: 35rem;
+}
+.hide{
+    display: none;
+}

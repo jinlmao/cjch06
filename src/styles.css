@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+.table {
+    background: black;
+    color: white;  
+    border-spacing: 0;
+
+}
+pr{
+    font-size:12px;
+    color:red;
+    }

@@ -1,0 +1,59 @@
+<div [ngClass]="{hide:page1}">
+  <div class="d-flex align-items-center login-content none ">
+    <form [formGroup]="usersForm" (ngSubmit)="onSubmit(usersForm.value)">
+      <h3 class="d-flex justify-content-center">用户登录</h3>
+      <div class="form-group">
+
+        <label for="userName">用户名</label>
+        <input type="text" class="form-control" id="userName" aria-describedby="输入用户名" name="userName"
+          autocomplete="off" [formControl]="usersForm.controls['userName']"
+          [ngClass]="{'is-invalid':usersForm.controls['userName'].invalid,'is-valid':usersForm.controls['userName'].valid}">
+        <div class="valid-feedback">
+          用户名格式正确
+        </div>
+        <div class="invalid-feedback">
+          <span *ngIf="usersForm.controls['userName'].hasError('required')">
+            用户名必须填写
+          </span>
+          <span *ngIf="!usersForm.controls['userName'].hasError('required') &&
+        usersForm.controls['userName'].hasError('minlength')">
+            用户名长度不得小于3
+          </span>
+          <span *ngIf="!usersForm.controls['userName'].hasError('required') &&
+        usersForm.controls['userName'].hasError('maxlength')">
+            用户名长度不得大于20
+          </span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">密码</label>
+        <input type="password" class="form-control " name="password" [formControl]="usersForm.controls['password']"
+          [ngClass]="{'is-invalid':usersForm.controls['password'].invalid,'is-valid':usersForm.controls['password'].valid}">
+        <div class="valid-feedback">
+          密码格式填写正确!
+        </div>
+        <div class="invalid-feedback">
+          <span *ngIf="usersForm.controls['password'].hasError('required')">
+            密码必须填写
+          </span>
+          <span *ngIf="!usersForm.controls['password'].hasError('required') &&
+        usersForm.controls['password'].hasError('minlength')">
+            密码长度不得小于6位
+          </span>
+          <span *ngIf="!usersForm.controls['password'].hasError('required') &&
+        usersForm.controls['password'].hasError('maxlength')">
+            密码长度不得大于16位
+          </span>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">登录</button>
+    </form>
+  </div>
+</div>
+<div [ngClass]="{hide:page2}">
+  <div class="d-flex align-items-center login-content">
+    <h1>第二界面</h1>
+  </div>
+
+
+</div>
