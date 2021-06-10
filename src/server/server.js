@@ -21,9 +21,6 @@ app.get('/hello', function (req, resp) {
     resp.end();
 });
 
-
-
-
 app.get('/users', function (req, resp) {
     resp.send(USERS);
     resp.end();
@@ -60,7 +57,7 @@ app.put('/user', function (req, resp) {
         resp.send({ succ: true });
     }
     else {
-        resp.send({ succ: false, msg: '没有找到用户!' });
+        resp.send({ succ: false, msg: '没有找到你的账户' });
     }
     resp.end();
 });
@@ -80,7 +77,7 @@ app.delete('/user/:id', function (req, resp) {
         resp.send({ succ: true });
     }
     else {
-        resp.send({ succ: false, msg: '没有找到用户!' });
+        resp.send({ succ: false, msg: '没有找到你的账户' });
     }
     resp.end();
 });
